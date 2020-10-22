@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t phuctranlv/learn-docker -f Dockerfile.dev /frontend
+
+script:
+  - docker run -e CI=true phuctranlv/learn-docker npm run test -- --coverage
