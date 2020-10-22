@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true phuctranlv/learn-docker npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "learn-docker"
+  env: "LearnDocker-env"
+  bucket_name: "elasticbeanstalk-us-west-1-237841522464"
+  ducket_path: "learn-docket"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:$AWS_SECRET_KEY
