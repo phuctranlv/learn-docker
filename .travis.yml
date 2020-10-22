@@ -14,7 +14,7 @@ deploy:
   app: "learn-docker"
   env: "LearnDocker-env"
   bucket_name: "elasticbeanstalk-us-west-1-237841522464"
-  ducket_path: "learn-docket"
+  bucket_path: "learn-docker"
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
